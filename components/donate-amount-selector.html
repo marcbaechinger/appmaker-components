@@ -44,7 +44,6 @@
 		  this.buildWidget(this);
 	  }, 
 	  buildWidget: function (context) {
-		  console.log("buildWidget");
 		  var list = context.querySelector(".donate-amount-selector"),
 		  	  buf = "";
 		  amounts.forEach(function (amount) {
@@ -56,11 +55,12 @@
 			  buf += currency;
 			  buf += "</label></li>";
 		  });
-		  console.log(buf);
 		  list.innerHTML = buf;
 	  },
-	  setCurrency: function () {
-
+	  setCurrency: function (curr) {
+		  console.log(curr);
+		  currency = curr;
+		  this.buildWidget(this);
 	  },
       broadcasts: ['click', 'mouseDown', 'mouseUp'],
       defaultBroadcasts: ['click']
